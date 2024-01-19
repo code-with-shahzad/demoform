@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="styles.css">
+<body>
+    <div novalidate="novalidate" data-select2-id="5">
+        <div dir="rtl" class="card" data-select2-id="4">
+          <p class="form-title">מספר המקומות מוגבל, הקדימו והירשמו:</p>
+          <div class="input_error">
+            <input oninput="handleChange()" id="input_1" type="text" name="name" id="name" placeholder="שם מלא" required="">
+            <p  id="tooltip_1" class="tooltip_error">יש למלא את השדה</p> 
+          </div>
+          <div class="input_error">
+            <input oninput="handleChange()" id="input_2" type="tel" name="phone" id="phone" pattern="^05\d{8}$" title="נא להכניס מספר טלפון תקין" placeholder="מספר טלפון" dir="rtl" required="">
+            <p id="tooltip_2" class="tooltip_error">יש למלא את השדה</p> 
+          </div>
+          <div class="input_error">
+              <select id="input_3" onchange="handleChange()" placeholder="בחירת מרכז" required="" name="select" class="form-select" data-select2-id="options" tabindex="-1" aria-hidden="true">
+                <option value="" disabled selected>בחירת מרכז</option>
+                <option data-select2-id="8">אופקים</option>
+                <option data-select2-id="9">אשקלון</option>
+                <option data-select2-id="10">באר שבע</option>
+                <option data-select2-id="11">בוקעאתא</option>
+                <option data-select2-id="12">גליל סאג'ור</option>
+                <option data-select2-id="13">דימונה</option>
+                <option data-select2-id="14">חיפה</option>
+                <option data-select2-id="15">חצור הגלילית</option>
+                <option data-select2-id="16">טייבה</option>
+                <option data-select2-id="17">טבריה</option>
+                <option data-select2-id="18">יפו</option>
+                <option data-select2-id="19">יקנעם</option>
+                <option data-select2-id="20">ירושלים</option>
+                <option data-select2-id="21">מגדל העמק</option>
+                <option data-select2-id="22">מסעדה</option>
+                <option data-select2-id="23">נהריה</option>
+                <option data-select2-id="24">עכו</option>
+                <option data-select2-id="25">ערד</option>
+                <option data-select2-id="26">קרית אונו</option>
+                <option data-select2-id="27">קרית שמונה</option>
+                <option data-select2-id="28">רמת השרון</option>
+                <option data-select2-id="29">תל אביב</option>
+              </select>
+            <p id="tooltip_3" class="tooltip_error">יש למלא את השדה</p> 
+          </div>
+          <button onclick="handleSubmit()" class="btn" type="submit">שליחה</button>
+        </div>
+
+      </div>
+    <script src="/index.js"></script>
+</body>
+</html>
