@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles.css" />
   <body>
     <div novalidate="novalidate" data-select2-id="5">
-      <div dir="rtl" class="card" data-select2-id="4">
+      <form onsubmit="handleSubmit(event)" dir="rtl" class="card" data-select2-id="4">
         <p class="form-title">מספר המקומות מוגבל, הקדימו והירשמו:</p>
         <div class="input_error">
           <input
@@ -18,7 +18,6 @@
             name="name"
             id="name"
             placeholder="שם מלא"
-            required=""
           />
           <p id="tooltip_1" class="tooltip_error">יש למלא את השדה</p>
         </div>
@@ -32,7 +31,6 @@
             title="נא להכניס מספר טלפון תקין"
             placeholder="מספר טלפון"
             dir="rtl"
-            required=""
           />
           <p id="tooltip_2" class="tooltip_error">יש למלא את השדה</p>
         </div>
@@ -42,7 +40,7 @@
           <div class="list">
             <div onclick="toggleDropdown()" class="title title_list">
               <span id="input_3" data-value="" class="text">בחירת מרכז*</span
-              ><span class="icon icon-chev_down"></span>
+              ><span class="icon icon-chev_down">⌄</span>
             </div>
             <ul id="scrollbar-inner" class="scrollbar-inner">
               <li onclick="selectOption(this)" data-value="אופקים" class="show">אופקים</li>
@@ -69,10 +67,10 @@
             </ul>
           </div>
         </div>
-        <button id="btn" onclick="handleSubmit()" class="btn" type="submit">
+        <button id="btn" class="btn" type="submit">
           שליחה
         </button>
-      </div>
+      </form>
     </div>
     <script src="index.js"></script>
   </body>

@@ -152,4 +152,10 @@ li:hover{
   font-size: 20px;
   font-family: sans-serif;
   padding: 7px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.icon-chev_down {
+  font-size: 14px;
 }

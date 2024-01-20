@@ -8,7 +8,8 @@ const tooltip_2 = document.getElementById("tooltip_2");
 const tooltip_3 = document.getElementById("tooltip_3");
 
 const numberValidataion = () => {};
-const handleSubmit = () => {
+const handleSubmit = (e) => {
+  e.preventDefault();
   const selectInput = document.getElementById("input_3");
   tooltip_1.style.visibility =
     input_1.value.trim() === "" ? "visible" : "hidden";
@@ -38,7 +39,7 @@ const toggleDropdown = () => {
   var dropdown = document.getElementById("scrollbar-inner");
   var btn = document.getElementById("btn");
   dropdown.style.visibility =
-    dropdown.style.visibility === "hidden" ? "visible" : "hidden";
+    dropdown.style.visibility === "visible" ? "hidden" : "visible";
   btn.style.zIndex = dropdown.style.visibility === "hidden" ? "100" : "0";
 };
 
