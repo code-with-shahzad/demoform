@@ -15,6 +15,11 @@ input {
   border-bottom: 1px solid #fff;
   background: transparent;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 input::placeholder {
   color: #014282;
 }
@@ -22,14 +27,16 @@ input::placeholder {
   width: 100%;
   font-size: 20px;
   height: 35px;
+  size: 5px;
   color: #014282;
   border: none;
   outline: none;
   border-bottom: 1px solid #fff;
   background: transparent;
 }
-select-dropdown {
-  height: 30px !important;
+.selectwrapper {
+  overflow-y: visible;
+  height: 50px;
 }
 .card {
   max-width: 600px;
