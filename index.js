@@ -20,12 +20,12 @@ const handleSubmit = () => {
   isShowError = true;
 };
 const handleChange = () => {
+  if (!input_2.value.match(/^05\d{8}$/) && input_2.value != "") {
+    tooltip_2.innerText = "מספר הטלפון אינו תקין";
+  } else {
+    tooltip_2.innerText = "יש למלא את השדה";
+  }
   if (isShowError) {
-    if (!input_2.value.match(/^05\d{8}$/) && input_2.value != "") {
-      tooltip_2.innerText = "מספר הטלפון אינו תקין";
-    } else {
-      tooltip_2.innerText = "יש למלא את השדה";
-    }
     tooltip_1.style.visibility =
       input_1.value.trim() === "" ? "visible" : "hidden";
     tooltip_2.style.visibility = input_2.value.match(/^05\d{8}$/)
