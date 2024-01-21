@@ -34,14 +34,11 @@ const handleSubmit = (e) => {
 
     fetch(url, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
       body: new URLSearchParams(data).toString(),
     })
       .then((response) => response.json())
-      .then((result) => console.log(result))
-      .catch((error) => console.error("Error:", error));
+      .then((result) => result)
+      .catch((error) => error);
   }
 };
 const handleChange = () => {
