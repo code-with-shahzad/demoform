@@ -19,6 +19,30 @@ const handleSubmit = (e) => {
   tooltip_3.style.visibility =
     selectInput.getAttribute("data-value") == "" ? "visible" : "hidden";
   isShowError = true;
+
+  if (
+    input_1.value &&
+    input_2.value.match(/^05\d{8}$/) &&
+    selectInput.getAttribute("data-value")
+  ) {
+    const url = "https://danydin.github.io/landpage_23/ajax-contact.php";
+    const data = {
+      fullname: input_1.value,
+      phone: input_2.value,
+      branch: selectInput.getAttribute("data-value"),
+    };
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams(data).toString(),
+    })
+      .then((response) => response.json())
+      .then((result) => console.log(result))
+      .catch((error) => console.error("Error:", error));
+  }
 };
 const handleChange = () => {
   if (!input_2.value.match(/^05\d{8}$/) && input_2.value != "") {
