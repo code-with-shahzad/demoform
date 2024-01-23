@@ -9,7 +9,6 @@ const tooltip_3 = document.getElementById("tooltip_3");
 const numberValidataion = () => {};
 const handleSubmit = (e) => {
   e.preventDefault();
-  const selectInput = document.getElementById("input_3");
   tooltip_1.style.visibility =
     input_1.value.trim() === "" ? "visible" : "hidden";
   tooltip_2.style.visibility = input_2.value.match(/^05\d{8}$/)
@@ -23,11 +22,14 @@ const handleSubmit = (e) => {
       const data = {
         fullname: input_1.value,
       phone: input_2.value,
-      branch: selectInput.getAttribute("data-value"),
+      branch: input_3.value,
     };
     
     fetch(url, {
       method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
       body: new URLSearchParams(data).toString(),
     })
     .then((response) => response.json())
@@ -36,7 +38,6 @@ const handleSubmit = (e) => {
   }
 };
 const handleChange = () => {
-  console.log(input_3.value)
   if (!input_2.value.match(/^05\d{8}$/) && input_2.value != "") {
     tooltip_2.innerText = "מספר הטלפון אינו תקין";
   } else {
